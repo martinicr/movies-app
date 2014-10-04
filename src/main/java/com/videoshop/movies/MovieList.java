@@ -24,4 +24,8 @@ public class MovieList {
         return movies.contains(movie);
     }
 
+    public List<Movie> list(){
+        return this.movies;
+    }
+
 }

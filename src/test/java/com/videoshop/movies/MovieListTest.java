@@ -6,6 +6,8 @@ import static org.hamcrest.Matchers.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
 public class MovieListTest {
 
     MovieList movieList;
@@ -46,6 +48,17 @@ public class MovieListTest {
         assertThat(movieList.contains(starWars), is(true));
         assertThat(movieList.contains(titanic), is(true));
         assertThat(movieList.contains(cars), is(false));
+    }
+
+    @Test
+    public void movieList() throws Exception{
+        Movie starWars = new Movie("Star Wars");
+        Movie titanic = new Movie("Titanic");
+        movieList.add(starWars);
+        movieList.add(titanic);
+        List<Movie> theList = movieList.list();
+        assertThat(theList.get(0).getTitle(), is("Star Wars"));
+        assertThat(theList.get(1).getTitle(), is("Titanic"));
     }
 
 }

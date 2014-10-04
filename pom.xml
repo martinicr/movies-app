@@ -8,6 +8,18 @@
     <name>movies-app</name>
     <url>http://maven.apache.org</url>
     <dependencies>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -24,6 +36,7 @@
 
     <build>
         <finalName>movies-app</finalName>
+        <defaultGoal>test</defaultGoal>
         <plugins>
             <plugin>
                 <inherited>true</inherited>
@@ -37,7 +50,34 @@
                     </configuration>
                     <version>2.3.2</version>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.3.2</version>
+                <configuration>
+                    <executable>java</executable>
+                    <arguments>
+                        <argument>-Dmyproperty=myvalue</argument>
+                        <argument>-classpath</argument>
+                        <!-- automatically creates the classpath using all project dependencies,
+                             also adding the project build directory -->
+                        <classpath/>
+                        <argument>com.videoshop.movies.App</argument>
+                        ...
+                    </arguments>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+
+    <developers>
+        <developer>
+            <name>Martin</name>
+            <organization>Personal</organization>
+            <roles>
+                <role>Software Engineer</role>
+            </roles>
+        </developer>
+    </developers>
 
 </project>

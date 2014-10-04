@@ -1,0 +1,6 @@
+## View for movie listing
+**************** Movie List ****************
+#foreach( $movie in $movies )
+    $velocityCount => $movie.title
+#end
+********************************************

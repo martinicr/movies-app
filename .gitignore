@@ -52,3 +52,6 @@ nbproject/
 
 #JRebel
 rebel.xml%
+
+#Velocity
+velocity.log
