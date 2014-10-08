@@ -9,12 +9,19 @@
     <url>http://maven.apache.org</url>
 
     <distributionManagement>
-        <repository>
-            <id>bintray-martinicr-maven-movies-snapshots</id>
-            <name>martinicr-maven-movies-snapshots</name>
-            <url>https://api.bintray.com/maven/martinicr/maven/movies-snapshots</url>
-        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>ci-artifactory-snapshots</name>
+            <url>http://localhost:9091/artifactory/libs-snapshot-local</url>
+        </snapshotRepository>
     </distributionManagement>
+
+    <scm>
+        <connection>scm:git:https://github.com/martinicr/movies-app.git</connection>
+        <developerConnection>scm:git:git@github.com:martinicr/movies-app.git</developerConnection>
+        <url>https://github.com/martinicr/movies-app</url>
+        <tag>HEAD</tag>
+    </scm>
 
     <dependencies>
         <dependency>
